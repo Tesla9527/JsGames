@@ -25,7 +25,7 @@ function Canvas(element_id) {
     this.GoodsWidth = 0;
     /**
      * 物品宽度
-     * @property {Number} GoodsWidth
+     * @property {Number} GoodsHeight
      */
     this.GoodsHeight = 0;
 }
