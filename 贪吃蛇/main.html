@@ -4,15 +4,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>SB贪吃蛇</title>
 	<meta charset="utf-8" />
+    <style>
+        div.block {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+        }
+        div.block.goods_blank {
+
+        }
+        div.block.goods_player {
+            background-color: #CCC;
+        }
+        div.block.goods_road {
+            background-color: white;
+        }
+        div.block.goods_wall {
+            background-color: #B5A;
+        }
+    </style>
 </head>
 <body>
     <div id="canvas">
-
+        <div class="block goods_player"></div><div class="block goods_player"></div><div class="block goods_road"></div><div class="block goods_road"></div><div class="block goods_wall"></div><div class="block goods_wall"></div>
     </div>
     <script src="js/canvas.js" type="text/javascript"></script>
     <script type="text/javascript">
         //创建画布
-        var Canvas = new Canvas("canvas");
+        var Canvas = new Canvas("canvas", 20, 20);
     </script>
 </body>
 </html>

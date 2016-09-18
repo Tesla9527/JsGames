@@ -22,7 +22,7 @@
  * @constructor 构造函数
  * @param {String} element_id 画布所属元素Id.
  */
-function Canvas(element_id) {
+function Canvas(element_id, _width, _height) {
 <span id='Canvas-property-Width'>    /**
 </span>     * 宽度（横向格数）
      * @property {Number} Width
@@ -37,14 +37,14 @@ function Canvas(element_id) {
     this.Height = 0;
 <span id='Canvas-property-GoodsWidth'>    /**
 </span>     * 物品宽度
-     * @property {Number} GoodsWidth
+     * @property {Number} [GoodsWidth=32]
      */
-    this.GoodsWidth = 0;
+    this.GoodsWidth = 32;
 <span id='Canvas-property-GoodsHeight'>    /**
 </span>     * 物品宽度
-     * @property {Number} GoodsHeight
+     * @property {Number} [GoodsHeight=32]
      */
-    this.GoodsHeight = 0;
+    this.GoodsHeight = 32;
 }</pre>
 </body>
 </html>

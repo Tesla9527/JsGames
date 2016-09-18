@@ -5,27 +5,40 @@
  * @constructor 构造函数
  * @param {String} element_id 画布所属元素Id.
  */
-function Canvas(element_id) {
+function Canvas(element_id, _width, _height) {
+    if (_width === undefined) this.Width = 10;
+    if (_height === undefined) this.Height = 10;
+
+    this.Cells = [];
     /**
      * 宽度（横向格数）
      * @property {Number} Width
      * @private
      */
-    this.Width = 0;
+    this.Width = _width;
     /**
      * 高度（纵向格数）
      * @property {Number} Height
      * @private
      */
-    this.Height = 0;
+    this.Height = _height;
     /**
-     * 物品宽度
-     * @property {Number} GoodsWidth
+     * 速度
+     * @property {Number} [Speed=1.0]
      */
-    this.GoodsWidth = 0;
+    this.Speed = 1.0;
+
     /**
-     * 物品宽度
-     * @property {Number} GoodsHeight
+     * 初始化
+     * @method Init
      */
-    this.GoodsHeight = 0;
+    this.Init = function () {
+        this.Cells = [];
+        for (var i = 0; i < this.Height; i++) {
+            this.Cells.push([]);
+            for (var o = 0; o < this.Width; o++) {
+                this.Cells[i].push();
+            }
+        }
+    }
 }
