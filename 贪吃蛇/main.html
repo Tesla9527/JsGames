@@ -2,37 +2,59 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>SB贪吃蛇</title>
+    <title>Fuck贪吃蛇</title>
 	<meta charset="utf-8" />
     <style>
+        #canvas {
+        }
         div.block {
             box-sizing: border-box;
             display: inline-block;
-            width: 32px;
-            height: 32px;
+            margin-bottom: -3px;
+            width: 20px;
+            height: 20px;
         }
-        div.block.goods_blank {
-
+        div.block.player_red {
+            border-radius: 50%;
+            background-color: rgba(200,20,20,0.8);
         }
-        div.block.goods_player {
-            background-color: #CCC;
+        div.block.player_blue {
+            border-radius: 50%;
+            background-color: rgba(20,20,200,0.8);
+        }
+        div.block.player_yellow {
+            border-radius: 50%;
+            background-color: rgba(200,200,20,0.8);
+        }
+        div.block.goods_player.black {
+            border-radius: 50%;
+            background-color: rgba(20,20,20,0.8);
         }
         div.block.goods_road {
-            background-color: white;
+            background-image: url(images/road.jpg);
         }
-        div.block.goods_wall {
-            background-color: #B5A;
+        div.block.goods_bar {
+            background-image: url(images/bar.jpg);
         }
     </style>
 </head>
-<body>
+<body style="background-color:#EEE;">
     <div id="canvas">
-        <div class="block goods_player"></div><div class="block goods_player"></div><div class="block goods_road"></div><div class="block goods_road"></div><div class="block goods_wall"></div><div class="block goods_wall"></div>
     </div>
+    <input type="button" value="开始游戏" onclick="Start()" />
+    <script src="js/enum.js" type="text/javascript"></script>
+    <script src="js/goods.js" type="text/javascript"></script>
+    <script src="js/player.js" type="text/javascript"></script>
     <script src="js/canvas.js" type="text/javascript"></script>
     <script type="text/javascript">
         //创建画布
-        var Canvas = new Canvas("canvas", 20, 20);
+        var canvas = new Canvas("canvas", 20, 20);
+        canvas.Init();
+
+        function Start() {
+            //开始游戏
+            canvas.Play();
+        }
     </script>
 </body>
 </html>

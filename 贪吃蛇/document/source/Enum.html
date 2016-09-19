@@ -15,27 +15,99 @@
   </script>
 </head>
 <body onload="prettyPrint(); highlight();">
-  <pre class="prettyprint lang-js"><span id='Enum-GoodsType'>/**
-</span> * 物品类别
- * @enum {Number} Enum.GoodsType
- */
-var GoodsType = {
-<span id='Enum-GoodsType-property-Null'>    /**
-</span>    * 未指定
-    */
-    Null: 0,
-<span id='Enum-GoodsType-property-Player'>    /**
-</span>     * 玩家
+  <pre class="prettyprint lang-js">var Enum = {
+<span id='Enum-GoodsType'>    /**
+</span>     * 物品类别
+     * @enum {Object} Enum.GoodsType
      */
-    Player: 1, 
-<span id='Enum-GoodsType-property-Road'>    /**
-</span>     * 路
+    GoodsType: {
+<span id='Enum-GoodsType-property-None'>        /**
+</span>        * 未指定
+        */
+        None: { Name: &quot;blank&quot;, CssClass: &quot;goods_blank&quot;, Value: 0 },
+<span id='Enum-GoodsType-property-Road'>        /**
+</span>         * 路
+         */
+        Road: { Name: &quot;road&quot;, CssClass: &quot;goods_road&quot;, Value: 1 },
+<span id='Enum-GoodsType-property-Bar'>        /**
+</span>         * 障碍物
+         */
+        Bar: { Name: &quot;bar&quot;, CssClass: &quot;goods_bar&quot;, Value: 2 }
+    },
+<span id='Enum-UserGroup'>    /**
+</span>     * 玩家类型
+     * @enum {Object} Enum.UserGroup
      */
-    Road: 2,  
-<span id='Enum-GoodsType-property-Bar'>    /**
-</span>     * 障碍物
+    UserGroup: {
+<span id='Enum-UserGroup-property-None'>        /**
+</span>        * 未指定
+        */
+        None: { Name: &quot;blank&quot;, CssClass: &quot;player_blank&quot;, Value: 0 },
+<span id='Enum-UserGroup-property-Red'>        /**
+</span>        * 红
+        */
+        Red: { Name: &quot;red&quot;, CssClass: &quot;player_red&quot;, Value: 1 },
+<span id='Enum-UserGroup-property-Blue'>        /**
+</span>         * 蓝
+         */
+        Blue: { Name: &quot;blue&quot;, CssClass: &quot;player_blue&quot;, Value: 2 },
+<span id='Enum-UserGroup-property-Black'>        /**
+</span>         * 黑
+         */
+        Black: { Name: &quot;black&quot;, CssClass: &quot;player_black&quot;, Value: 3 },
+<span id='Enum-UserGroup-property-Yellow'>        /**
+</span>         * 黄
+         */
+        Yellow: { Name: &quot;yellow&quot;, CssClass: &quot;player_yellow&quot;, Value: 4 }
+    },
+<span id='Enum-PlayerState'>    /**
+</span>     * 玩家状态
+     * @enum {Object} Enum.PlayerState
      */
-    Bar: 3
+    PlayerState: {
+<span id='Enum-PlayerState-property-None'>        /**
+</span>         * 未指定
+         */
+        None: 0,
+<span id='Enum-PlayerState-property-Wait'>        /**
+</span>         * 等待
+         */
+        Wait: 1,
+<span id='Enum-PlayerState-property-Move'>        /**
+</span>         * 移动
+         */
+        Move: 2,
+<span id='Enum-PlayerState-property-Die'>        /**
+</span>         * 死亡
+         */
+        Die: 3
+    },
+<span id='Enum-Direction'>    /**
+</span>     * 玩家方向
+     * @enum {Object} Enum.Direction
+     */
+    Direction: {
+<span id='Enum-Direction-property-None'>        /**
+</span>         * 未指定
+         */
+        None: 0,
+<span id='Enum-Direction-property-Up'>        /**
+</span>         * 上
+         */
+        Up: 1,
+<span id='Enum-Direction-property-Down'>        /**
+</span>         * 下
+         */
+        Down: 2,
+<span id='Enum-Direction-property-Left'>        /**
+</span>         * 左
+         */
+        Left: 3,
+<span id='Enum-Direction-property-Right'>        /**
+</span>         * 右
+         */
+        Right: 4
+    }
 }</pre>
 </body>
 </html>
