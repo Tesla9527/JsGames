@@ -5,55 +5,88 @@
     <title>Fuck贪吃蛇</title>
 	<meta charset="utf-8" />
     <style>
+        body {
+            margin: 0px;
+        }
         #canvas {
         }
-        div.block {
+        .game_terrain,
+        .game_unit {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        /*方块基础样式*/
+        .game_terrain > div,
+        .game_unit > div {
             box-sizing: border-box;
             display: inline-block;
             margin-bottom: -3px;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
         }
-        div.block.player_red {
+        /*玩家*/
+        div.player_head {
+            border-radius: 50%;
+            background-color: rgba(20,200,20,0.8);
+        }
+        div.player_red {
             border-radius: 50%;
             background-color: rgba(200,20,20,0.8);
         }
-        div.block.player_blue {
+        div.player_blue {
             border-radius: 50%;
             background-color: rgba(20,20,200,0.8);
         }
-        div.block.player_yellow {
+        div.player_yellow {
             border-radius: 50%;
             background-color: rgba(200,200,20,0.8);
         }
-        div.block.goods_player.black {
+        div.goods_player.black {
             border-radius: 50%;
             background-color: rgba(20,20,20,0.8);
         }
-        div.block.goods_road {
+        /*地形*/
+        div.goods_road {
             background-image: url(images/road.jpg);
         }
-        div.block.goods_bar {
+        div.goods_bar {
             background-image: url(images/bar.jpg);
+        }
+        /*单位*/
+        div.unit_rock {
+            background-image: url(images/rock.png);
+            background-size: 100% 100%;
         }
     </style>
 </head>
 <body style="background-color:#EEE;">
-    <div id="canvas">
+    <div id="game">
+        <div class="game_terrain"></div>
+        <div class="game_unit"></div>
     </div>
     <input type="button" value="开始游戏" onclick="Start()" />
+    <input type="button" value="移动" onclick="Move()" />
+    <script src="js/tool.js" type="text/javascript"></script>
     <script src="js/enum.js" type="text/javascript"></script>
     <script src="js/goods.js" type="text/javascript"></script>
+    <script src="js/unit.js" type="text/javascript"></script>
+    <script src="js/map.js" type="text/javascript"></script>
     <script src="js/player.js" type="text/javascript"></script>
     <script src="js/canvas.js" type="text/javascript"></script>
     <script type="text/javascript">
         //创建画布
-        var canvas = new Canvas("canvas", 20, 20);
-        canvas.Init();
+        var canvas = new Canvas("#game", 20, 20);
+        var game = new Game(canvas);
+        game.Init();
 
         function Start() {
             //开始游戏
-            canvas.Play();
+            game.Play();
+        }
+
+        function Move() {
+            game.Players[0].Move();
         }
     </script>
 </body>

@@ -1,21 +1,47 @@
 ﻿var Enum = {
     /**
-     * 物品类别
-     * @enum {Object} Enum.GoodsType
+     * 方块类别
+     * @enum {Number} Enum.GoodsType
      */
     GoodsType: {
         /**
-        * 未指定
-        */
-        None: { Name: "blank", CssClass: "goods_blank", Value: 0 },
-        /**
-         * 路
+         * 未指定
          */
-        Road: { Name: "road", CssClass: "goods_road", Value: 1 },
+        None: 0,
+        /**
+         * 普通地形（可通过）
+         */
+        Road: 1,
+        /**
+         * 障碍物（不可通过）
+         */
+        Bar: 2
+    },
+    /**
+     * 单位类别
+     * @enum {Number} Enum.UnitType
+     */
+    UnitType: {
+        /**
+         * 未指定
+         */
+        None: 0,
+        /**
+         * 玩家
+         */
+        Player: 1,
         /**
          * 障碍物
          */
-        Bar: { Name: "bar", CssClass: "goods_bar", Value: 2 }
+        Bar: 2,
+        /**
+         * 奖励
+         */
+        Reward: 3,
+        /**
+         * 陷阱
+         */
+        Trap: 4
     },
     /**
      * 玩家类型
@@ -45,7 +71,7 @@
     },
     /**
      * 玩家状态
-     * @enum {Object} Enum.PlayerState
+     * @enum {Number} Enum.PlayerState
      */
     PlayerState: {
         /**
@@ -67,7 +93,7 @@
     },
     /**
      * 玩家方向
-     * @enum {Object} Enum.Direction
+     * @enum {Number} Enum.Direction
      */
     Direction: {
         /**
@@ -90,5 +116,27 @@
          * 右
          */
         Right: 4
+    },
+    /**
+     * 难度
+     * @enum {Number} Enum.Difficulty
+     */
+    Difficulty: {
+        /**
+         * 未指定
+         */
+        None: 0,
+        /**
+         * 简单
+         */
+        Easy: 1,
+        /**
+         * 普通
+         */
+        Normal: 2,
+        /**
+         * 困难
+         */
+        Hard: 3
     }
 }
